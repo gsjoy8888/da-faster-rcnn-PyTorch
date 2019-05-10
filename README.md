@@ -8,7 +8,7 @@ An unofficial implementation of  'Domain Adaptive Faster R-CNN for Object Detect
 
 1. Install [Pytorch](http://pytorch.org/)
 
-pip install https://download.pytorch.org/whl/cu90/torch-0.4.0-cp27-cp27m-linux_x86_64.whl
+   - pip install https://download.pytorch.org/whl/cu90/torch-0.4.0-cp27-cp27m-linux_x86_64.whl
 
 2. Our code is conducted based on [faster-rcnn.pytorch](https://github.com/jwyang/faster-rcnn.pytorch),please setup the framework by it.
 
