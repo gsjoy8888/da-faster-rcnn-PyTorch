@@ -35,7 +35,7 @@ An unofficial implementation of  'Domain Adaptive Faster R-CNN for Object Detect
  CUDA_VISIBLE_DEVICES=GPU_ID python da_trainval_net.py --dataset cityscape --net vgg16 --bs 1 --lr 2e-3 --lr_decay_step 6 --cuda
  
  # Test model in target domain 
- CUDA_VISIBLE_DEVICES=GPU_ID python eval/test.py --dataset cityscape --part test_t --model_dir=# The path of your pth model --cuda
+ CUDA_VISIBLE_DEVICES=GPU_ID python eval/test.py --dataset cityscapes --part test_t --cuda --model_dir=# The path of your pth model 
  ```
  
   Our model could arrive mAP=30.71% in target domain which is high than baseline mAP=24.26%
