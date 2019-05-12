@@ -29,13 +29,15 @@ An unofficial implementation of  'Domain Adaptive Faster R-CNN for Object Detect
 
 2.change the dataset root path in ./lib/model/utils/config.py and some dataset dir path in  ./lib/datasets/cityscape.py,the default dataset path is ./data and the default pre-trained module path is /data/ztc/detectionModel/
 
-3 Train the model
+3 Train the model (cityscapes -> cityscapes-foggy)
 
- # train cityscapes -> cityscapes-foggy
+'''shell
  CUDA_VISIBLE_DEVICES=GPU_ID python da_trainval_net.py --dataset cityscape --net vgg16 --bs 1 --lr 2e-3 --lr_decay_step 6 --cuda
- 
- # Test model in target domain, move eval/test.py to ./test.py 
- CUDA_VISIBLE_DEVICES=GPU_ID python test.py --dataset cityscapes --part test_t --cuda --model_dir=# The path of your pth model 
+'''
 
+4. Test the model (move eval/test.py to ./test.py )
+'''shell
+ CUDA_VISIBLE_DEVICES=GPU_ID python test.py --dataset cityscapes --part test_t --cuda --model_dir=# The path of your pth model 
+'''
  
-  Our model could arrive mAP=30.71% in target domain which is high than baseline mAP=24.26%
+Our model could arrive mAP=30.71% in target domain which is high than baseline mAP=24.26%
