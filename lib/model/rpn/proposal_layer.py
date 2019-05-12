@@ -156,8 +156,12 @@ class _ProposalLayer(nn.Module):
             # padding 0 at the end.
             num_proposal = proposals_single.size(0)
             output[i,:,0] = i
-            output[i,:num_proposal,1:] = proposals_single
-
+            #output[i,:num_proposal,1:] = proposals_single
+            if num_proposal == 0:
+                num_proposal = num_proposal + 1
+                proposals_single = torch.zeros((1, 4))
+            output[i, :num_proposal, 1:] = proposals_single
+            
         return output
 
     def backward(self, top, propagate_down, bottom):
