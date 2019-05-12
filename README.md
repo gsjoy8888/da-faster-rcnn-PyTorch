@@ -31,13 +31,13 @@ An unofficial implementation of  'Domain Adaptive Faster R-CNN for Object Detect
 
 3 Train the model (cityscapes -> cityscapes-foggy)
 
-'''shell
+```shell
  CUDA_VISIBLE_DEVICES=GPU_ID python da_trainval_net.py --dataset cityscape --net vgg16 --bs 1 --lr 2e-3 --lr_decay_step 6 --cuda
-'''
+```
 
 4. Test the model (move eval/test.py to ./test.py )
-'''shell
+```shell
  CUDA_VISIBLE_DEVICES=GPU_ID python test.py --dataset cityscapes --part test_t --cuda --model_dir=# The path of your pth model 
-'''
+```
  
 Our model could arrive mAP=30.71% in target domain which is high than baseline mAP=24.26%
